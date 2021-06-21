@@ -1,0 +1,80 @@
+Requirements:
+microSD
+microSD card reader
+rPi3 
+rPi4
+CM3 Development Board
+MAC OS X
+
+1. With CM3 on the Development Board with USB to rPi4, follow:
+https://www.raspberrypi.org/documentation/hardware/computemodule/cm-emmc-flashing.md
+to boot from USB.
+
+2. Using Raspberry Imager on rPi4, install recommended Raspberry Pi OS (32-bit).
+
+3. Using File Manager on rPi4, add ssh file to boot partition.
+
+4. In boot partition add "dtoverlay=dwc2,dr_mode=peripheral" in config.txt file and "modules-load=dwc2,g_ether" in cmdline.txt file.
+
+5. From http://goo.gl/U4t12b get dt-blob.bin and add it to boot partition.
+
+6. Eject.
+
+7. Power cycle CM3 on the Development Board, plug into MAC.
+
+8. Wait and connect by running "ssh pi@raspberrypi.local" in Terminal
+
+9. Enter password "raspberry".
+
+10. Run "sudo raspi-config" to enable Camera in Interface Settings.
+
+11. Reboot using "sudo reboot now".
+
+12. Build python3 files.
+
+13. Test file.
+
+14. Add "sudo python3 /home/pi/filename.py" above "exit 0" in rc.local using "sudo nano /etc/rc.local".
+
+15. Shutdown using "sudo shutdown now".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Using Raspberry Pi Imager on MAC, load RASPBERRY PI OS LITE (32-BIT) onto microSD
+
+2. Reinsert microSD into MAC, add blank ssh file, wpa_supplicant.conf file
+
+3. Insert microSD into rPi3 and connect via ssh
+
+4. Install python3-picamera, python3-gpiozero, Enable camera in raspi-config
+
+5. Transfer RGB file
+
+6. Add to /etc/rc.local: sudo python3 /home/pi/RGB.py &
+
+7. sudo shutdown now, Insert microSD into MAC
+
+8. add dt-blob.bin to boot on microSD
+
+9. create dmg of boot using Disk Utility on MAC 
+
+10. convert dmg to img using hdiutil convert disk.dmg -format RdWr -o disk.img
+
+11. transfer img to rPi4 to Image onto CM3
+
