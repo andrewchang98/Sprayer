@@ -14,6 +14,8 @@ https://picamera.readthedocs.io/en/release-1.13/ is an excellent resource for un
 Firmware.py is the simple script which captures images and scans a single center line to check for the presence of "green" pixels.
 
 Green is currently measured in the code using three variables based on the RGB value of a pixel.
+The first variable takes the G value of a pixel and uses it as a threshold for brightness.
+The second and third variable uses the ratio of R over G and B over G to determine if the hue is correct.
 
 FirmwareProcess.txt outlines the process for setting up CM3+ Modules.
 
