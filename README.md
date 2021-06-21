@@ -14,3 +14,7 @@ https://picamera.readthedocs.io/en/release-1.13/ is an excellent resource for un
 Firmware.py is the simple script which captures images and scans a single center line to check for the presence of "green" pixels.
 
 Green is currently measured in the code using three variables based on the RGB value of a pixel.
+
+FirmwareProcess.txt outlines the process for setting up CM3+ Modules.
+
+It is important to note that the dt-blob-cam1.dts file is essential to be added to the Raspberry Pi to interface with the Pi Camera.
